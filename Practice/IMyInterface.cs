@@ -8,7 +8,7 @@ namespace Practice
 {
     public interface IMyInterface
     {
-        //event EventHandler Clicked;
+        event EventHandler Clicked;
         public void Greet()
         {
             Console.WriteLine("Hello from IMyInterface!");
@@ -16,13 +16,19 @@ namespace Practice
     }
     public class MyClass : IMyInterface
     {
+        public event EventHandler Clicked;
+
         public void Greet()
         {
             Console.WriteLine("Hello from My Class!");
         }
+        public void OnClicked()
+        {
+            Clicked?.Invoke(this, EventArgs.Empty);
+        }
     }
-    public class MyClass2 : IMyInterface
-    {
+    //public class MyClass2 : IMyInterface
+    //{
         
-    }
+    //}
 }
