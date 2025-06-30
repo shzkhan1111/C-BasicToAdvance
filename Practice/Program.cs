@@ -8,7 +8,7 @@ public class Program
         MyClass obj = new MyClass();
         obj.Greet();
         MyClass2 obj2 = new MyClass2();
-        obj2.Greet();
+        ((IMyInterface)obj2).Greet();
 
         IMyInterface iobj = new MyClass2();
         iobj.Greet();

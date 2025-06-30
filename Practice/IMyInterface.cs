@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Practice
 {
-    public class IMyInterface
+    public interface IMyInterface
     {
+        //event EventHandler Clicked;
         public void Greet()
         {
             Console.WriteLine("Hello from IMyInterface!");
@@ -15,7 +16,7 @@ namespace Practice
     }
     public class MyClass : IMyInterface
     {
-        public  void Greet()
+        public void Greet()
         {
             Console.WriteLine("Hello from My Class!");
         }
