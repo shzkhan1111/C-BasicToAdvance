@@ -6,17 +6,11 @@ public class Program
     public static void Main()
     {
         MyClass obj = new MyClass();
-        obj.Greet();
-        obj.Clicked += (sender, e) => Console.WriteLine("You have clicked a button");
-        obj.Clicked += (sender, e) => Console.WriteLine("You have clicked a button");
-        obj.Clicked += (sender, e) => Console.WriteLine("You have clicked a button");
-        obj.OnClicked();
-        obj.OnClicked();
-        //MyClass2 obj2 = new MyClass2();
-        //((IMyInterface)obj2).Greet();
-
-        //IMyInterface iobj = new MyClass2();
-        //iobj.Greet();
+        //obj.Log(); //error
+        IMyInterface ob1 = new MyClass();
+        ob1.Log("This is my name"); //error
+        MyClass2 obj2 = new MyClass2();
+        obj2.Log("This is my name from myClass2");
 
     }
 }

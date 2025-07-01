@@ -8,27 +8,28 @@ namespace Practice
 {
     public interface IMyInterface
     {
-        event EventHandler Clicked;
-        public void Greet()
-        {
-            Console.WriteLine("Hello from IMyInterface!");
-        }
+        //public string Name { get => "Anonymous"; }
+        //public string LastName{ get; set; }
+        void Log(string message);
+
+
     }
     public class MyClass : IMyInterface
     {
-        public event EventHandler Clicked;
-
-        public void Greet()
+        void IMyInterface.Log(string message)
         {
-            Console.WriteLine("Hello from My Class!");
+            Console.WriteLine($"{message} from myClass");
         }
-        public void OnClicked()
+    }
+    public class MyClass2 : IMyInterface
+    {
+        public void Log(string message)
         {
-            Clicked?.Invoke(this, EventArgs.Empty);
+            Console.WriteLine($"{message} from myClass");
         }
     }
     //public class MyClass2 : IMyInterface
     //{
-        
+
     //}
 }
