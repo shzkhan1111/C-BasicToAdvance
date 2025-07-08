@@ -8,12 +8,28 @@ public class Program
     {
         try
         {
-            var i = Console.ReadLine();
-            int e = int.Parse(i);
+            Method1();
         }
         catch (Exception ex) 
         {
-            throw new MyCustsomException("This is a custom exception", ex);
+            Console.WriteLine("Exception caught in Main: " + ex.Message);
         }
+    }
+    static void Method1()
+    {
+        try
+        {
+            Method2();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        
+    }
+
+    private static void Method2()
+    {
+        throw new Exception("This is a custom exception");
     }
 }
